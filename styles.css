@@ -1,3 +1,4 @@
+/**************************** RESET CODE ********************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -45,4 +46,522 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+/*end of reset*/
+
+/*fonts for the website*/
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.karla-regular {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/*end of fonts*/
+
+
+/*************************************** MAIN CSS STARTS HERE *******************************************/
+
+
+/**************************** SKIP LINK ********************************/
+/*make website smoother when scrolling or skip linking*/
+html {
+    scroll-behavior: smooth;
+}
+ 
+.skip-link {
+    position: absolute;
+    padding: 8px;
+    background-color: #d69e3d;
+    color: #fff;
+	top: -10em
+}
+
+.skip-link:focus {
+	top:0;
+}
+
+
+/**************************** BODY STYLE ********************************/
+
+/*web base style - [to fit the requirement for the assignment]*/
+body {
+	background-color: #f3f0e9;
+	font-family: Karla, sans-serif;
+	font-size: 1rem;
+}
+
+/*heading text style - [to set the heading to the desktop/primary size]*/
+h1{
+	font-family: lato, sans-serif;
+	font-size: 3.815rem;
+	font-weight: 900; /*made the heading bold to match the wireframe more*/
+}
+
+h2 {
+	font-family: lato, sans-serif;
+	font-size: 3.052rem;
+}
+
+h3 {
+	font-family: lato, sans-serif;
+	font-size: 1.953rem;
+}
+
+h6 {
+	font-family: lato, sans-serif;
+	color: #d69e3d;
+    font-weight: 500;
+	font-size: 0.9rem;
+	display: block;
+    margin-bottom: 0.5rem;
+	/*added to style the minor heading to match the wireframe*/
+}
+
+/*removing the link effect*/
+a{
+	text-decoration: none;
+}
+
+/*make the images responsive and fit it's container*/
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+
+
+/**************************** HEADER ********************************/
+
+/*made header/nav bg black*/
+header {
+	background: black;
+}
+
+/*made header/nav text white*/
+.header-nav a {
+	color: white;
+}
+
+/*displayed flex and aligned the items to the center. Added justify space between so it is vertical and padding so it matches the padding in the wireframe*/
+.header-nav {
+	display: flex;
+	align-items: center;
+  	justify-content: space-between;
+	padding: .3rem 15rem;
+}
+
+/*flexed the nav ul and added a 2rem gap between so it fits the wireframe. Also flex wrap for responsiveness*/
+nav ul{
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.nav-t:hover {
+	color: #d69e3d;
+}
+
+
+/**************************** HERO *******************************/
+
+/*added background image with center/cover no repeat so it fit the container. changed text color and alignment. 100vh for the img sizing wanted*/ 
+.hero {
+	background: url("images/hero-background.jpg") center center/cover no-repeat;
+	color: white;
+	text-align: center;
+	min-height: 100vh;
+	position: relative;
+}
+
+/*overlay so the text is visible over image. min-height to match background */
+.overlay {
+	background: rgba(0, 0, 0, 0.5);
+	min-height: 100vh;
+}
+
+.hero-container {
+	position: absolute;
+    text-align: center;
+    width: 100%;
+	padding-top: 20%;
+}
+
+.hero-container h1 {
+    animation: fadeIn 2s ease;
+	padding: 0 32% 0 32%; /*too have the text fit the wireframe*/
+	text-transform: uppercase;
+	font-weight: 700; /*made the heading bold to match the wireframe more*/
+}
+
+.hero-container p {
+    max-width: 600px;
+	margin: 1.25rem auto 2rem;
+	animation: fadeIn 2s ease;
+	padding: 0 40% 0 40%; /*too have the text fit the wireframe*/
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+ /*this is what makes the animations in h1 and p actually work*/
+
+/*the style, placement and padding of the menu button on the hero section*/
+.menu-butt {
+	display: inline-block;
+	padding: .85rem 2rem;
+	background-color: #ffffff;
+	color: rgb(0, 0, 0);
+	font-weight: 500;
+	margin-top: 2rem;
+	font-family: karla, sans-serif;
+	font-weight: 700;
+}
+
+/*this is what is making it so when i hover it changes*/
+.menu-butt:hover {
+	background-color: #d69e3d;
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+/*===================== WELCOME / COLLAGE SECTION ===================== */
+ 
+.welcome { padding: 3rem 0; }
+ 
+.welcome-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.welcome h2, .welcome h6{
+	margin-left: 20%;
+}
+
+.welcome p{
+    padding-top: 5rem;
+}
+
+.welcome-container{
+	max-width: 1200px;
+	margin: auto;
+    padding: 1rem;
+	gap: 0.50rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;  
+    height: 500px;     
+}
+
+/*to make it so the rows and columns work for the grid and have 1 big and 2 rows of smaller images*/
+.wel-img-big {
+	grid-row: 1/3 ;
+}
+ 
+/* ===================== WHY VISIT US / OFFERS SECTION ===================== */
+ 
+.visit {
+    padding: 3rem 0;
+    text-align: center;
+}
+ 
+.visit-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+.visit-container h2 { 
+	margin-bottom: 3rem; 
+}
+
+.offer{
+	grid-template-columns: 1fr 1fr 1fr;
+	display: grid;
+	gap: 15rem;
+}
+/*to place the offers in the right place in a horizontal line and have the gap between them instead of the default column*/
+
+.offer-item h3 {
+	margin: 1rem -1rem;
+}
+
+.offer-item p {
+	margin: 0 -1rem;
+}
+
+/************************** OTHER PAGES PROMO *************************/
+ 
+
+.more-info {
+	background: url(images/coffee-shop.jpeg) center/cover;
+	position: relative;
+	padding: 4rem 1rem;
+}
+/*adding the image as bg using relative and absolute to position the overlay so its over the image and the text is visible*/
+
+.more-info::before{
+	content: "";
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	inset: 0;
+}
+
+.more-info-container {
+	position: relative;
+	display: flex;
+	gap: 4rem;
+	text-align: center;
+	margin: 4rem 0;
+}
+
+/* text colour and spacing from the sides*/
+.more-info-box1 {
+	margin-left: 20rem ;
+	color: #fff;
+}
+
+.more-info-box2 {
+	margin-right: 20rem ;
+	color: #fff;
+}
+
+/*spacing for the heading to match the wireframe more and to have it fit the container better*/
+.more-info-container h2 {
+	margin: 1rem 0 8rem 0;
+}
+
+/*menu button style and placement*/
+.menu-btn {
+	padding: .85rem 2rem;
+	color: #fff;
+    background-color:transparent;
+    outline: 3px solid #fff;
+}
+
+/*menu button hover effect*/
+.menu-btn:hover {
+	background-color: #fff;
+	color: #000;
+}
+/* ===================== ABOUT US ===================== */
+
+.about{
+    padding: 6rem 1rem;
+	display: flex; /*to have the image and text side by side*/
+	gap: 2rem;
+	align-items: center; /*to align the image and text vertically to the center*/
+	justify-content: center; /*center the content horizontally*/
+}
+
+.about img {
+	width: 25%;
+}
+
+.about-text {
+	width: 31%;
+}
+
+.para {
+	padding-top: 1rem;
+	padding-bottom: 5rem;	
+}
+
+/* Styling the button */
+.about-btn{
+    color: #fff;
+    background-color: #000;
+	font-weight: bold;
+	padding: .85rem .85rem;
+}
+
+.about-btn:hover {
+	background-color: #966f2c;
+
+}
+
+/*===================== TESTIMONIALS SECTION ===================== */
+
+.testimonials {
+	padding: 3rem 1rem;
+    background:#000;
+    color:#fff;
+	box-align: center;
+}
+
+.testimonial-lay{
+	padding: 3rem 1rem;
+	display: flex;
+	gap: 2rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.testi {
+	width: 25%;
+	height: 75%;
+}
+
+.testi img{
+	opacity: 0.6;
+}
+/*to make the image darker so text is visible over making an overlay which i gave up on trying and did the easy way*/
+
+.quote {
+ 	transform: translateY(-12rem);
+	margin: 1rem;
+}
+/*moving testimonials up so it is over the image and adding margin to match the wireframe more*/
+
+.quote p {
+	margin-bottom: 1.5rem;
+}
+
+span {
+	text-transform: uppercase;
+	color: #d69e3d;
+	font-size: 1.5rem;
+}
+
+/*====================footer====================*/
+
+
+footer {
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	padding: 1rem;
+	font-size: 0.9rem;
+}
+
+
+
+
+/*========================================================================
+==========================================================================
+======================--- MEDIA QUERIES ---===============================
+==========================================================================
+==========================================================================*/
+
+/*for tablets*/
+@media (max-width: 768px) {
+	h1{
+		font-size: 2.986rem;
+	}
+
+	h2 {
+		font-size: 2.488rem;
+	}
+
+	h3 {
+		font-size: 1.728rem;
+	}
+
+	h6 {
+		font-size: 0.7rem;
+	}
+
+	/* Shrink nav padding so it doesn't overflow*/
+	.header-nav {
+		padding: .3rem 2rem;
+	}
+
+	/*Stack the welcome collage into a 2-column grid for better viweing*/
+	.welcome-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		height: auto;
+		/*	removes fixed height on tablet */
+	}
+
+    /*big image takes full width on top and span on both of the columns*/
+    .welc-img-big {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    }
+
+    /*shrink the offer gap and 2 columns rather then the og 3*/
+    .offer {
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+
+	}
+
+    /*Pull headings back from the 20% left margin*/
+    .welcome h2, h6 {
+        margin-left: 5%;
+    }
+
+    /*Reduce hero text padding*/
+    .hero-container h1 {
+        padding: 0 10%;
+    }
+
+    .hero-container p {
+        padding: 0 15%;
+    }
+}
+
+
+/*for mobile*/
+@media (max-width: 480px ) {
+		h1{
+		font-size: 2.027rem;
+	}
+
+	h2 {
+		font-size: 1.802rem;
+	}
+
+	h3 {
+		font-size: 1.424rem;
+	}
+
+	h6 {
+		font-size: 0.7rem;
+	}
+
+	/*offers stacked vertically one by one instead*/
+	.offer {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.welcome h2, .welcome h6 {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	/*change width of the hero text for better visibility and also legability */
+	.hero-container h1 {
+		padding: 0 5%;
+		font-size: 2rem;
+	}
+
+	.hero-container p {
+		padding: 0 5%;
+	}
+
+	/*any side-by-side sections should collapse to a single column for better visibility on mobile*/
+	.about-container,
+	.more-info-container,
+	.testimonial-lay {
+		grid-template-columns: 1fr;
+		flex-direction: column;
+	}
+
 }

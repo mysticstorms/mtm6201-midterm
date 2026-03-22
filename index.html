@@ -3,57 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <!--this is for the lato font for the header and karla for body-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
   <title>My Coffee House</title>
 </head>
 
 <body>
-
+  <!-- skip link for access reasons-->
+  <a href="#" class="skip-link">Skip to main content</a>
+  
   <!--Header/Navigation-->
 
   <header>
-    <div class="header-nav">
-      <img src="images/my-coffee-shop-logo.svg" alt="My Coffee House Logo" class="logo">
-        <h5>My Coffee House</h5>
+    <div class="header-nav" role="navigation" aria-label="main menu">
+      <a href="#"><img src="images/my-coffee-shop-logo.svg" alt="My Coffee House Logo" class="logo"></a>
+      <!--this is for the logo so i can put it in the header/nav-->
           <nav>
             <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Location</a></li>
+              <li><a href="#about" class="nav-t">About</a></li>
+              <li><a href="#more" class="nav-t">Menu</a></li>
+              <li><a href="#more" class="nav-t">Location</a></li>
             </ul>
           </nav>
+          <!--this the list for the navigation-->
       </div>
   </header>
     
-  <!--Main Content-->
+
+
+  <!--MAIN CONTENT-->
 
   <main>
 
-    <section id="home">
-      <div class="home-container">
-        <h1>Experience coffee like never before</h1>
-        <p>We craft more than beverages; we curate memories, one flavorful moment at a time. Embrace the aroma and let every visit be a chapter in your coffee story.</p>
-        <a href="#" class="menu-butt">Explore Our Menu</a>
-      </div>
+    <!--hero section-->
+    <section class="hero"role="banner" aria-label="banner with barista">
+      <section class="overlay">
+        <div class="hero-container">
+          <h1>EXPERIENCE COFFEE LIKE NEVER BEFORE</h1>
+          <p>We craft more than beverages; we curate memories, one flavorful moment at a time. Embrace the aroma and let every visit be a chapter in your coffee story.</p>
+          <a href="#" class="menu-butt">Explore Our Menu</a>
+        </div>
+      </section>
     </section>
+    <!--this is the hero aka the top header image. I added the tittle, paragraph and button-->
     
-    <section id="welcome">
-      <div class="welcome-container">
-        <h6>Welcome to My Coffee House</h6>
+    <!--welcome/collage section-->
+    <section class="welcome" role="welcome" aria-label="welcome section with collage of images">
+      
+        <h6>WELCOME TO MY COFFEE HOUSE</h6>
         <h2>EXPERIENCE A NEW WAY TO TASTE COFFEE</h2>
-        <img src="images/latte.jpeg" alt="Latte being poured" class="wel-img">
+        
+        <div class="welcome-container">
+        <img src="images/latte.jpeg" alt="Latte being poured" class="wel-img-big">
         <img src="images/coffee-beans.jpeg" alt="Coffee beans" class="wel-img">
         <img src="images/pouring-coffee.jpeg" alt="Coffee being poured" class="wel-img">
         <img src="images/three-cups.jpeg" alt="Three cups of coffee" class="wel-img">
         <img src="images/smiling-employee.jpeg" alt="Smiling employee" class="wel-img">
       </div>
     </section>
+    <!--this section has the welcome text with all the images for the collage with all their individual alt/descriptions-->
 
-    <section id="visit">
+    <!--visit us section-->
+    <section class="visit" role="introduction" aria-label="section about what we offer with 3 icons">
       <div class="visit-container">
-        <h6>what we offer</h6>
-        <h2>Why Visit Us</h2>
+        <h6>WHAT WE OFFER</h6>
+        <h2>WHY VISIT US</h2>
 
+        <!--svg section-->
         <div class="offer">
 
           <div class="offer-item">
@@ -76,13 +97,118 @@
 
         </div>
     </section>
+    <!--this is the offers section. I added the 3 SVG's of the things we offer as a company with the corresponding text adding all-->
 
-    <section id="more-info">
+    <!--the more info section (basically promo to dif part of site)-->
+    <section class="more-info" id="more" role="inform" aria-label="a banner image with menu and location page link">
       <div class="more-info-container">
         
+        <div class="more-info-box1">
+          <p>OUR MENU</p>
+          <h2>EXPLORE WHAT WE HAVE TO OFFER YOU</h2>
+          <a href="#" class="menu-btn">EXPLORE OUR MENU</a>
+        </div>
+
+        <div class="more-info-box2">
+          <p>OUR LOCATION</p>
+          <h2>FIND YOUR NEAREST COFFEE SHOP</h2>
+          <a href="#" class="menu-btn">VIEW LOCATIONS</a>
+        </div>
+
       </div>
     </section>
+    <!--this section has the extra info we can find to get to know more about the company. Keeping both boxes separate since they are their own topic and need their own space-->
+
+    <!--about us section-->
+    <section class="about" id="about" role="introduction" aria-label="about us section with image and text">
+
+        <img src="images/about-us.jpeg" alt="a barista making coffee">
+
+        <div class="about-text">
+          <h6>ABOUT US</h6>
+          <h2>READ OUR STORY</h2>
+
+            <div class="para">
+              <p>In the heart of our community, My Coffee House emerged as a humble local coffee shop that sought to redefine the coffee experience. Founded with a passion for quality brews and a commitment to fostering genuine connections, we embarked on this journey with a vision to create a warm and inviting space for coffee enthusiasts and casual patrons alike.</p>
+
+              <p>My Coffee House quickly became a cherished gathering spot, where the rich aroma of freshly ground coffee beans mingled with the laughter of friends and the tapping of keyboards from those seeking a cozy workspace.</p>
+            </div>
+
+          <a href="#" class="about-btn">LEARN MORE</a>
+        </div>
+    </section>
+    <!--this is the about us section. I separated image and text to help with the layout. I made 2 paragraphs since i saw 2 on the wireframe. Also made sure to add the button-->
+
+    <!--testimonials section-->
+    <section class="testimonials" role="testimonials" aria-label="testimonials with 3 photos of customers">
+        <h6>TESTIMONIALS</h6>
+        <h2>WHAT OUR CUSTOMERS SAY ABOUT US</h2>
+
+        <div class="testimonial-lay">
+          <!--lay short for layout since this will help with layout-->
+
+          <div class="testi">
+            <img src="images/testimonial-1.jpeg" alt="a women with blonde hair drinking out of a white cup">
+
+             <div class="quote">
+                <p>"I always make a point to visit My Coffee Company when in Ottawa. Delicious coffee and friendly service."</p>
+                <span>Jane D., Toronto</span>
+             </div>
+
+          </div>
+
+          <div class="testi">
+            <img src="images/testimonial-2.jpeg" alt="a man with dark locs and a beard. Has laptop open in front of him and he is smiling">
+            
+              <div class="quote">
+                <p>"Great atmosphere to get some work done while enjoying a cup or two of incredible coffee."</p>
+                <span>Scott S., Ottawa</span>
+              </div>
+
+          </div>
+
+          <div class="testi">
+            <img src="images/testimonial-3.jpeg" alt="a redheaded woman holding a cup while smiling at her computer">
+              
+              <div class="quote">
+                <p>"Best coffee in Ottawa and the service is top notch. Would highly recommend a visit."</p>
+                <span>Susie F., Ottawa </span>
+              </div>
+
+          </div>
+
+        </div>
+    </section>
+    <!--this is the testimonials section with the 3 testimonials and the photographs of the customers-->
+
   </main>
+  <!--this is the end of the main content-->
+
+
+
+  <!--=======FOOTER SECTION=========-->
+  <footer role="contentinfo" aria-label="site footer">
+    <hr>
+    <p>&copy;My Coffee Company 2024</p>
+  </footer>
+  <!--this is the footer i added <br> for the horizontal line we saw on the wireframe and then added the copyright notice-->
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- why you still here?? this is the end of the document >.> -->
